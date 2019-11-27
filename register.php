@@ -87,11 +87,11 @@
       <input type="date" class="input1" name="dob" required>
        <input type="text" class="input1" name="address" placeholder="Addressline*" required>
       Select disability type*:<br/>
-      <input type="radio" class="radio1" id="dis1" name="disability" value="<?php echo $disability; ?>" required>Visually Impaired<br/>
-      <input type="radio" class="radio1" id="dis2" name="disability" value="<?php echo $disability; ?>" required>Orthopaedic Disability<br/>
-      <input type="radio" class="radio1" id="dis3" name="disability" value="<?php echo $disability; ?>" required>Hearing Impaired<br/>
-      <input type="radio" class="radio1" id="dis4" name="disability" value="<?php echo $disability; ?>" required>Intellectually Impaired<br/>
-      <input type="radio" class="radio1" id="dis5" name="disability" value="<?php echo $disability; ?>" required>Multiple Disability<br/><br/>
+      <input type="radio" class="radio1" id="dis1" name="disability" value="Visually Impaired" required>Visually Impaired<br/>
+      <input type="radio" class="radio1" id="dis2" name="disability" value="Orthopaedic Disability" required>Orthopaedic Disability<br/>
+      <input type="radio" class="radio1" id="dis3" name="disability" value="Hearing Impaired" required>Hearing Impaired<br/>
+      <input type="radio" class="radio1" id="dis4" name="disability" value="Intellectually Impaired" required>Intellectually Impaired<br/>
+      <input type="radio" class="radio1" id="dis5" name="disability" value="Multiple Disability" required>Multiple Disability<br/><br/>
       Select education*:<br/>
       <input type="radio" class="radio1" name="education" value="<?php echo $education; ?>" required>Upto 12th Std/PUC<br/>
       <input type="radio" class="radio1" name="education" value="<?php echo $education; ?>" required>Graduation<br/>

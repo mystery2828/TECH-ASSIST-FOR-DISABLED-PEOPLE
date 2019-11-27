@@ -6,8 +6,8 @@ $username = "";
 $email    = "";
 $contact = "";
 $disability= "";
-$education= "";
-$profession= "";
+//$education= "";
+//$profession= "";
 $errors = array(); 
 
 // connect to the database
@@ -20,7 +20,7 @@ if (isset($_POST['reg_user'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
-    $contact = mysqli_real_escape_string($db, $_POST['contact']);
+  $contact = mysqli_real_escape_string($db, $_POST['contact']);
     $disability = mysqli_real_escape_string($db, $_POST['disability']);
 
   // form validation: ensure that the form is correctly filled ...
@@ -53,8 +53,8 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password, contact, disability, education, profession) 
-  			  VALUES('$username', '$email', '$password', '$contact', '$disability', '$education', '$profession')";
+  	$query = "INSERT INTO users (username, email, password, disability) 
+  			  VALUES('$username', '$email', '$password', '$disability')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
@@ -69,6 +69,7 @@ if (isset($_POST['reg_user'])) {
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
+  $disability = mysqli_real_escape_string($db, $_POST['disability']);
 
   if (empty($username)) {
   	array_push($errors, "Username is required");
@@ -82,7 +83,8 @@ if (isset($_POST['login_user'])) {
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['username'] = $username;
+      $_SESSION['username'] = $username;
+      $_SESSION['disability'] = $disability;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
   	}else {

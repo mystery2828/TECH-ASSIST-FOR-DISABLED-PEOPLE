@@ -41,6 +41,12 @@
   	<?php include('errors.php'); ?>
   	 <input type="text" class="input1" name="username" placeholder="Name*"  required>
  <input type="password" class="input1" name="password" placeholder="Password*" required>
+ Select disability type*:<br/>
+      <input type="radio" class="radio1" id="dis1" name="disability" value="Visually Impaired" required>Visually Impaired<br/>
+      <input type="radio" class="radio1" id="dis2" name="disability" value="Orthopaedic Disability" required>Orthopaedic Disability<br/>
+      <input type="radio" class="radio1" id="dis3" name="disability" value="Hearing Impaired" required>Hearing Impaired<br/>
+      <input type="radio" class="radio1" id="dis4" name="disability" value="Intellectually Impaired" required>Intellectually Impaired<br/>
+      <input type="radio" class="radio1" id="dis5" name="disability" value="Multiple Disability" required>Multiple Disability<br/><br/>
   	<div class="input-group">
   		<button type="submit" class="btn" name="login_user">Login</button>
   	</div>
