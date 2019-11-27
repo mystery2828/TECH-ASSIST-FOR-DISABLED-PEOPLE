@@ -36,7 +36,7 @@
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
     	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-        <?php if($_SESSION['disability'] == 'Orthopaedic Disability') { ?>
+        <?php if($_SESSION['disability'] == 'Hearing Impairment') { ?>
     <strong> Suggested products for "Hearing Impairment"</strong><br      />
     <br      />
    <div id="sell"><img src="hearingaid.jpg" alt="Image" height="200" width="200">
@@ -46,13 +46,14 @@
     </div><br      /><br      /><br      />
 
     <?php } ?>
-    <!-- <strong>Suggest products for Visual Impairment</strong><br      />
+	 <?php if($_SESSION['disability'] == 'Visual Impairment') { ?>
+    <strong>Suggest products for Visual Impairment</strong><br      />
     <div id="sell"><img src="orcam.jpg" alt="Image" height="200" width="200">
         <img src="dotwatch.jpg" alt="Image" height="200" width="200"><br/>
         <a href="https://www.orcam.com/en/myeye2/">Click here to buy this product</a>
         <a href="https://www.amazon.in/DOT-Watch-Smartwatch-Visually-Impaired/dp/B07C9RP6RB/ref=sr_1_8?ie=UTF8&qid=1535239415&sr=8-8&keywords=visually+impaired">Click here to buy this product</a>
-    </div> -->
-
+    </div>
+<?php } ?>
        <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
     <?php endif ?>
 </div>
